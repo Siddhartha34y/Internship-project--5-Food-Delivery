@@ -1,0 +1,346 @@
+/* Base navbar styling */
+.navbar {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: navbarAnimation 1s ease-out;
+}
+
+/* Animation for navbar */
+@keyframes navbarAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Logo styling */
+.navbar .logo {
+    width: 150px;
+    animation: fadeInLogo 1s ease-out;
+}
+
+/* Logo fade-in effect */
+@keyframes fadeInLogo {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Menu styling */
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    color: #49557e;
+    font-size: 18px;
+    animation: slideInMenu 1s ease-out;
+}
+
+/* Menu slide-in animation */
+@keyframes slideInMenu {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Right section of the navbar */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    animation: fadeInRight 1s ease-out;
+}
+
+/* Right section fade-in effect */
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* Button styling */
+.navbar button {
+    background-color: red; /* Set background color to red */
+    font-size: 16px;
+    color: white; /* Text color remains unchanged */
+    border: 1px solid red; /* Border color matches background */
+    padding: 10px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    animation: buttonPop 0.5s ease-out;
+}
+
+/* Button pop-in animation */
+@keyframes buttonPop {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Button hover effect */
+.navbar button:hover {
+    background-color: #ff4d4d; /* Lighter red background on hover */
+    transform: scale(1.05); /* Slightly increase button size on hover */
+}
+
+/* Button hover effect */
+.navbar button:hover {
+    background-color: #ff4d4d; /* Lighter red background on hover */
+}
+
+.navbar .active{
+    padding-bottom: 2px;
+    border-bottom: 2px solid #49557e;
+}
+
+.navbar li{
+    cursor: pointer;
+}
+
+
+.navbar-search-icon{
+    position: relative;
+}
+
+.navbar-search-icon .dot{
+    position: absolute;
+    min-width: 10px;
+    min-height: 10px;
+    background-color: tomato;
+    border-radius: 5px;
+    top:-8px;
+    right: -8px;
+
+}
+
+@media (max-width:1050px){
+    .navbar .logo{
+        width: 140px;
+    }
+
+    .navbar-menu{
+        gap:20px;
+        font-size: 17px;
+    }
+    .navbar-right{
+        gap:30px;
+    }
+
+    .navbar-right img{
+        width: 22px;
+    }
+    .navbar-right bottom{
+           padding: 8px 25px;;
+    }
+}
+
+@media (max-width:900px){
+    .navbar .logo{
+        width: 120px;
+    }
+
+    .navbar-menu{
+        gap:15px;
+        font-size: 16px;
+    }
+    .navbar-right{
+        gap:20px;
+    }
+
+    .navbar-right img{
+        width: 20px;
+    }
+    .navbar-right bottom{
+           padding: 7px 20px;
+           font-size: 15px;
+    }
+}
+
+@media (max-width:750px){
+    
+
+    .navbar-menu{
+       display: none;
+    }
+}
+
+/* .navbar-profile{
+    position: relative;
+}
+
+.nav-profile-dropdown{
+    position: absolute;
+    display: none;
+    right: 0;
+    z-index:1;
+}
+
+.navbar-profile:hover .nav-profile-dropdown{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff2ef;
+    padding: 12px 25px;
+    border-radius: 4px;
+    border: 1px solid red;
+    outline: 2px solid white;
+    list-style:none;
+} */
+
+/* Base styles for the navbar profile */
+.navbar-profile {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown menu that appears on hover */
+.nav-profile-dropdown {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position below the profile icon */
+    right: 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    padding: 10px;
+    z-index: 10;
+    animation: fadeIn 0.3s ease-in-out; /* Smooth fade-in effect */
+}
+
+/* Show the dropdown when hovering over the profile */
+.navbar-profile:hover .nav-profile-dropdown {
+    display: block;
+}
+
+/* Add a smooth transition for each list item */
+.nav-profile-dropdown li {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    cursor: pointer;
+    opacity: 0;
+    animation: slideIn 0.3s ease-out forwards; /* Slide in with fade effect */
+}
+
+/* Animation for the dropdown items */
+.nav-profile-dropdown li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.nav-profile-dropdown li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.nav-profile-dropdown li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+/* Slide-in effect for each list item */
+@keyframes slideIn {
+    0% {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Fade-in effect for the dropdown */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Styles for list items inside the dropdown */
+.nav-profile-dropdown li img {
+    margin-right: 10px;
+}
+
+/* Hover effect for list items */
+.nav-profile-dropdown li:hover {
+    background-color: #f4f4f4;
+}
+
+/* Desktop version styles */
+@media (min-width: 769px) {
+    /* Ensure the dropdown only shows when hovering over the profile */
+    .navbar-profile:hover .nav-profile-dropdown {
+        display: block;
+    }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    /* Navbar profile should be in flex layout for better spacing */
+    .navbar-profile {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    /* Dropdown should take the full width of the screen */
+    .nav-profile-dropdown {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        animation: none; /* Disable animation for mobile */
+        display: block;
+    }
+
+    /* Dropdown items should align properly */
+    .nav-profile-dropdown li {
+        justify-content: flex-start;
+        padding: 15px 10px;
+        animation: none; /* Disable animation for mobile */
+    }
+
+    .nav-profile-dropdown li img {
+        margin-left: 10px;
+    }
+
+    /* Make the dropdown appear instantly when clicked on mobile */
+    .navbar-profile .nav-profile-dropdown {
+        display: none; /* Hidden by default */
+    }
+
+    .navbar-profile.active .nav-profile-dropdown {
+        display: block; /* Show when profile is clicked */
+    }
+}

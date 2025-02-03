@@ -1,0 +1,156 @@
+/* General styling */
+.list {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.6s ease-in-out;
+  }
+  
+  .list p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Table container */
+  .list-table {
+    width: 100%;
+    margin: auto;
+    border-collapse: collapse;
+    overflow-x: auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.8s ease-out;
+  }
+  
+  /* Table header */
+  .list-table-format.title {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: #0078D4;
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+  }
+  
+  /* Table rows */
+  .list-table-format {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  /* Hover effects on rows */
+  .list-table-format:hover {
+    background-color: #f0f8ff;
+    transform: scale(1.01);
+  }
+  
+  /* Image styling */
+  .list-table-format img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+  }
+  
+  .list-table-format img:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Action column styling */
+  .list-table-format p:last-child {
+    color: #ff4d4d;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: color 0.3s, transform 0.2s;
+  }
+  
+  .list-table-format p:last-child:hover {
+    color: #d63333;
+    transform: scale(1.1);
+  }
+  
+  /* Responsive design */
+  @media screen and (max-width: 768px) {
+    .list-table {
+      overflow-x: auto;
+    }
+  
+    .list-table-format {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px 10px;
+    }
+  
+    .list-table-format.title {
+      flex-direction: column;
+      padding: 15px;
+      text-align: left;
+    }
+  
+    .list-table-format img {
+      margin-bottom: 10px;
+      width: 80px;
+      height: 80px;
+    }
+  
+    .list-table-format p {
+      margin: 5px 0;
+    }
+  }
+  
+  /* Smaller devices (phones) */
+  @media screen and (max-width: 480px) {
+    .list {
+      padding: 10px;
+    }
+  
+    .list p {
+      font-size: 1.2rem;
+    }
+  
+    .list-table-format img {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .list-table-format p {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  

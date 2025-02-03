@@ -1,0 +1,140 @@
+.food-item {
+    width: 100%;
+    margin: auto;
+    border-radius: 15px;
+    overflow: hidden; /* Ensures content stays within the rounded corners */
+    box-shadow: 0px 0px 10px #00000015;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 1s ease-in-out;
+    background: linear-gradient(145deg, #ffffff, #f3f3f3); /* Subtle gradient background */
+    position: relative; /* Allows positioning child elements, like a badge */
+}
+
+/* Hover effect */
+.food-item:hover {
+    transform: scale(1.05); /* Slightly scales up the card */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow for hover */
+}
+
+/* Keyframe animation for fading in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Starts slightly below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Ends at the original position */
+    }
+}
+
+/* Subtle bounce when clicked */
+.food-item:active {
+    transform: scale(0.95); /* Slightly shrinks on click */
+}
+
+/* Image styles */
+.food-item img {
+   
+    height: auto;
+    object-fit: cover; /* Ensures the image covers the container nicely */
+    border-radius: 15px 15px 0 0;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* Tilt and brightness on hover */
+.food-item:hover img {
+    transform: rotate(-2deg) scale(1.1); /* Adds slight tilt and zoom */
+    filter: brightness(1.1) contrast(1.05); /* Enhances brightness and contrast */
+}
+
+/* Glow effect on focus */
+.food-item:focus-within {
+    box-shadow: 0px 0px 20px 5px #FFCE45; /* Bright glow effect */
+}
+
+/* Add a price badge */
+.food-item::before {
+    content: "🔥 Popular";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #FF5733; /* Bright orange for the badge */
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    animation: badgeBounce 1.5s infinite ease-in-out; /* Adds bounce to the badge */
+}
+
+/* Badge bounce animation */
+@keyframes badgeBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Food item description styling */
+.food-item-info {
+    padding: 15px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.food-item-name-rating p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.food-item-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #FF5733;
+    margin-top: 10px;
+}
+
+/* Description styling */
+.food-item-desc {
+    color: #676767;
+    font-size: 0.9rem;
+    margin: 10px 0;
+}
+
+.food-item-name-rating img{
+    width: 120px;
+}
+
+.food-item-img-container{
+    position: relative;
+}
+
+.food-item-img-container .add{
+    width: 35px;
+    position: absolute;
+    bottom: 15px;
+    right:15px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.food-item-counter{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px;
+    border-radius: 50px;
+    background-color: white;
+}
+
+.food-item-counter img{
+    width: 30px;
+}

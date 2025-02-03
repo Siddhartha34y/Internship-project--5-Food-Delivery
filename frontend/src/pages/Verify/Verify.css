@@ -1,0 +1,40 @@
+.verify {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height */
+    background-color: #f8f9fa; /* Light background */
+  }
+  
+  .spinner {
+    width: 10vw; /* Responsive width (10% of viewport width) */
+    height: 10vw; /* Responsive height */
+    max-width: 80px; /* Prevent it from getting too big */
+    max-height: 80px;
+    min-width: 30px; /* Prevent it from getting too small */
+    min-height: 30px;
+  
+    border: 6px solid rgba(0, 0, 0, 0.1); /* Light border */
+    border-top: 6px solid #3498db; /* Blue accent */
+    border-radius: 50%; /* Circular shape */
+    animation: spin 1s linear infinite; /* Smooth infinite rotation */
+  }
+  
+  /* Keyframes for spinning animation */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Optional media query for very small screens */
+  @media (max-width: 600px) {
+    .spinner {
+      width: 20vw; /* Adjust size for smaller screens */
+      height: 20vw;
+    }
+  }
+  

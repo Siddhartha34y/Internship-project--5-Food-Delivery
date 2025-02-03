@@ -1,0 +1,163 @@
+/* Main form container */
+.place-order {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    max-width: 900px;
+    gap: 2rem;
+    animation: fadeInSlideUp 0.6s ease-in-out;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+  }
+  
+  /* Left section: Delivery Information */
+  .place-order-left {
+    flex: 1;
+    min-width: 280px;
+    max-width: 60%;
+    box-sizing: border-box; /* Ensure padding doesn't add to width */
+  }
+
+  .place-order-left .title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333;
+    animation: fadeIn 0.8s ease-out;
+  }
+  
+  /* Input fields */
+  .place-order-left input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* Prevent width overflow */
+  }
+  
+  /* Multi-field container */
+  .multi-fields {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    box-sizing: border-box; /* Ensure no overflow due to padding */
+  }
+  
+  .multi-fields input {
+    flex: 1;
+    min-width: 45%; /* Ensure inputs don't shrink too much */
+    box-sizing: border-box; /* Prevent width overflow */
+  }
+  
+  /* Right section: Cart Total */
+  .place-order-right {
+    flex: 1;
+    min-width: 280px;
+    max-width: 35%;
+    box-sizing: border-box; /* Prevent width overflow */
+    margin: 20px;
+  padding: 10px;
+  }
+  
+  .cart-total {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    animation: fadeIn 0.8s ease-out;
+    box-sizing: border-box; /* Prevent padding from causing overflow */
+  }
+  
+  .cart-total button {
+    width: 100%; /* Ensure button doesn't overflow */
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-sizing: border-box; /* Prevent width overflow */
+  }
+  
+  /* Responsive Styles */
+  
+  /* Tablets */
+  @media (max-width: 768px) {
+    .place-order {
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem;
+    }
+  
+    .place-order-left,
+    .place-order-right {
+      max-width: 100%;
+    }
+  
+    .multi-fields {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+  
+    .multi-fields input {
+      min-width: 100%;
+    }
+  }
+  
+  /* Mobile Phones */
+  @media (max-width: 576px) {
+    .place-order {
+      padding: 1rem;
+    }
+  
+    .place-order-left input,
+    .cart-total button {
+      font-size: 0.9rem;
+      padding: 0.7rem;
+    }
+  
+    .multi-fields input {
+      width: 100%;
+    }
+  
+    .cart-total button {
+      font-size: 1rem;
+      padding: 0.7rem;
+    }
+  }
+  
+  /* Extra Small Devices */
+  @media (max-width: 400px) {
+    .place-order {
+      padding: 0.5rem;
+    }
+  
+    .place-order-left .title {
+      font-size: 1.5rem;
+    }
+  
+    .place-order-left input,
+    .cart-total button {
+      font-size: 0.85rem;
+      padding: 0.6rem;
+    }
+  
+    .cart-total h2 {
+      font-size: 1.2rem;
+    }
+  }
+  
+
+  

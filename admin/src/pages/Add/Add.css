@@ -1,0 +1,167 @@
+/* General Styles */
+.add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(145deg, #f5f7fa, #c3cfe2);
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  form {
+    background: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 900px; /* Ensure the form doesn't stretch too wide */
+    height: 100%; /* Take up full vertical space */
+    animation: slideUp 0.8s ease-in-out;
+  }
+  
+  .flex-col {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Make all child sections fill available space */
+  }
+  
+  p {
+    font-size: 16px;
+    color: #34495e;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+  
+  /* Input Styles */
+  input,
+  textarea,
+  select {
+    border: 1px solid #dcdfe6;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%; /* Ensure inputs fill the container */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    height: 40px; /* Uniform height for inputs */
+  }
+  
+  textarea {
+    height: auto; /* Allow textarea to grow naturally */
+    resize: none; /* Disable resizing for consistent design */
+  }
+  
+  input:focus,
+  textarea:focus,
+  select:focus {
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Image Upload */
+  .add-image-upload {
+    align-items: center;
+    text-align: center;
+    flex: 1; /* Allow upload section to grow proportionally */
+  }
+  
+  .add-image-upload img {
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .add-image-upload img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Category and Price */
+  .add-category-price {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex: 1; /* Allow this section to stretch proportionally */
+  }
+  
+  .add-category,
+  .add-price {
+    flex: 1; /* Ensure both fields take equal space */
+  }
+  
+  /* Button Styles */
+  .add-button {
+    padding: 12px 20px;
+    background: linear-gradient(145deg, #007bff, #0056b3);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .add-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Responsive Design */
+  
+  /* Tablets */
+  @media (max-width: 768px) {
+    form {
+      gap: 15px;
+    }
+  
+    .add-category-price {
+      flex-direction: column;
+    }
+  }
+  
+  /* Mobile Devices */
+  @media (max-width: 480px) {
+    form {
+      padding: 15px;
+    }
+  
+    input,
+    textarea,
+    select {
+      font-size: 14px;
+      padding: 8px;
+    }
+  
+    .add-button {
+      font-size: 16px;
+      padding: 10px 15px;
+    }
+  }
+  

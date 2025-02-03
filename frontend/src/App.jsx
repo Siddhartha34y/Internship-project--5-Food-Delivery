@@ -1,0 +1,51 @@
+import React, { useState } from 'react'
+import Navbar from './components/Navbar/Navbar'
+import { Route, Routes } from 'react-router-dom'
+import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
+import Cart from './pages/Cart/Cart'
+import Home from './pages/Home/Home'
+import Footer from './components/Footer/Footer'
+import LoginPopup from './components/LoginPopup/LoginPopup'
+import Verify from './pages/Verify/Verify'
+import MyOrders from './pages/MyOrders/MyOrders'
+
+const App = () => {
+  // State to manage the visibility of the Login Popup
+  const [showLogin, setShowLogin] = useState(false)
+
+  return (
+    <>
+      {/* Display the Login Popup conditionally */}
+      {showLogin ? <LoginPopup setShowLogin={setShowLogin} /> : <></>}
+
+      {/* Main App container */}
+      <div className='app'>
+        {/* Navbar component */}
+        <Navbar setShowLogin={setShowLogin} />
+
+        {/* Routes for different pages */}
+        <Routes>
+          {/* Home page */}
+          <Route path='/' element={<Home />} />
+
+          {/* Cart page */}
+          <Route path='/cart' element={<Cart />} />
+
+          {/* Place Order page */}
+          <Route path='/order' element={<PlaceOrder />} />
+
+          {/* Payment Verification page */}
+          <Route path='/verify' element={<Verify />} />
+
+          {/* My Orders page */}
+          <Route path='/myorders' element={<MyOrders />} />
+        </Routes>
+      </div>
+
+      {/* Footer component */}
+      <Footer />
+    </>
+  )
+}
+
+export default App

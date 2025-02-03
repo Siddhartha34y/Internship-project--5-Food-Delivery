@@ -1,0 +1,214 @@
+/* General styling for orders */
+.order.add {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.6s ease-in-out;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    
+}
+
+/* Heading styling */
+/* Heading positioned at the top with margin adjustment */
+.order h3 {
+    position: absolute;
+    top: 10px; /* Place the heading near the top of the container */
+    left: 45%; /* Center the heading horizontally */
+    font-size: 2.2rem; /* Increased font size */
+    font-weight: 600; /* Bold text for emphasis */
+    color: #333;
+    margin: 0px; /* Remove default margin for top positioning */
+    padding: 0px 0; /* Padding for inside spacing */
+    text-transform: uppercase; /* To make the heading stand out */
+    letter-spacing: 1px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    cursor: pointer;
+}
+
+/* Hover effect for the heading */
+.order h3:hover {
+    color: #0078D4; /* Change color to blue on hover */
+    transform: translateY(-1px); /* Slight lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+
+/* Styling the order list container */
+.order-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 100%;
+}
+
+/* Order item styling */
+.order-item {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping of content inside */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.8s ease-out;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.order-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Order image styling */
+.order-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+    transition: transform 0.3s;
+}
+
+/* Hover effect for images */
+.order-item img:hover {
+    transform: scale(1.1);
+}
+
+/* Styling for the order details */
+.order-item div {
+    flex: 1;
+    max-width: 100%;
+}
+
+/* Text styling inside the order item */
+.order-item-food {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.order-item-name p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.order-item-address,
+.order-item-phone {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.order-item-phone {
+    font-weight: bold;
+}
+
+/* Dropdown for order status */
+.order-item select {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    transition: background-color 0.3s ease-in-out;
+    width: 100%; /* Make the dropdown take full width */
+    box-sizing: border-box;
+}
+
+.order-item select:hover {
+    background-color: #e1f5fe;
+}
+
+/* Styling for the price and item count */
+.order-item p {
+    font-size: 1.1rem;
+    margin-top: 5px;
+    color: #333;
+}
+
+.order-item p:last-child {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #0078d4;
+}
+
+/* Prevent overflow on smaller screens */
+@media screen and (max-width: 768px) {
+    .order-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .order-item img {
+        margin-bottom: 15px;
+        width: 80px;
+        height: 80px;
+    }
+
+    .order-item-name p {
+        font-size: 1rem;
+    }
+
+    .order-item-food {
+        font-size: 1.1rem;
+    }
+
+    .order-item select {
+        width: 100%;
+    }
+
+    /* Prevent overflow in the order list */
+    .order-list {
+        overflow-x: hidden;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .order {
+        padding: 10px;
+    }
+
+    .order h3 {
+        font-size: 1.5rem;
+    }
+
+    .order-item p {
+        font-size: 0.9rem;
+    }
+
+    .order-item img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

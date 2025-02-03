@@ -1,0 +1,135 @@
+/* General Styling */
+.my-orders {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .my-orders h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  /* Container */
+  .containers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+  }
+  
+  /* Order Card */
+  .my-orders-order {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .my-orders-order:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Parcel Icon */
+  .my-orders-order img {
+    width: 60px;
+    margin-bottom: 1rem;
+    animation: bounce 1.5s infinite;
+  }
+  
+  /* Order Details */
+  .my-orders-order p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    color: #555;
+  }
+  
+  /* Order Status */
+  .my-orders-order p span {
+    color: #28a745; /* Green dot for status */
+    animation: blink 1.2s infinite;
+  }
+  
+  /* Order Button */
+  .my-orders-order button {
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .my-orders-order button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Animations */
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .my-orders {
+      padding: 1rem;
+    }
+  
+    .my-orders h2 {
+      font-size: 2rem;
+    }
+  
+    .my-orders-order {
+      padding: 1rem;
+    }
+  
+    .my-orders-order p {
+      font-size: 0.9rem;
+    }
+  
+    .my-orders-order button {
+      padding: 0.4rem 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .my-orders h2 {
+      font-size: 1.8rem;
+    }
+  
+    .my-orders-order {
+      padding: 0.8rem;
+    }
+  
+    .my-orders-order p {
+      font-size: 0.8rem;
+    }
+  
+    .my-orders-order button {
+      padding: 0.3rem 0.8rem;
+    }
+  }
+  

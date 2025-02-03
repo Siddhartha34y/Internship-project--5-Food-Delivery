@@ -1,0 +1,140 @@
+/* Background overlay */
+.login-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+/* Popup container */
+.login-popup-container {
+    background-color: white;
+    width: 90%;
+    max-width: 400px;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(50px);
+    animation: slideUp 0.5s ease-in-out;
+    position: relative;
+}
+
+/* Title section */
+.login-popup-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.login-popup-title h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin: 0;
+}
+
+.login-popup-title img {
+    width: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.login-popup-title img:hover {
+    transform: rotate(90deg);
+}
+
+/* Input fields */
+.login-popup-inputs input {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.login-popup-inputs input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Button styling */
+button {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Terms of Use section */
+.login-popup-condition {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.login-popup-condition input {
+    margin-right: 0.5rem;
+}
+
+.login-popup-condition p {
+    margin: 0;
+}
+
+/* Link section */
+.login-popup-container p {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.login-popup-container span {
+    color: #007bff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.login-popup-container span:hover {
+    color: #0056b3;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
